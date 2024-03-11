@@ -12,24 +12,24 @@ export default function Home() {
       >
         <div className="pl-20 md:pl-40 pb-56 md:pb-20 flex flex-col gap-5 z-[10] max-w-[750px]">
           <h1 className="text-[50px] text-white font-semibold">
-            Greetings, wanderer
+            Hi I'm Nick
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-red-500">
               {" "}
-              welcome to my website
+              And this is my porfolio
             </span>
           </h1>
           <p className="text-gray-200 hidden md:block">
-            My name is Nick and I'm a technology enthusiast with a passion for
-            building computers, developing software, gaming, and staying active
-            through regular gym visits. My interest in technology extends from
-            hands-on hardware assembly to the intricate process of software
-            development, where I apply the lessons learned from gaming—strategy,
-            teamwork, and problem-solving—to create innovative solutions.
-            Balancing my tech pursuits with fitness, I bring discipline, a keen
-            eye for detail, and a continuous improvement mindset to my
-            professional endeavors. I'm always excited to collaborate on
-            projects that challenge and advance our understanding of what's
-            possible in the tech world.
+            Welcome! My name is Nick and I'm a technology enthusiast with a
+            passion for building computers, developing software, gaming, and
+            staying active through regular gym visits. My interest in technology
+            extends from hands-on hardware assembly to the intricate process of
+            software development, where I apply the lessons learned from
+            gaming—strategy, teamwork, and problem-solving—to create innovative
+            solutions. Balancing my tech pursuits with fitness, I bring
+            discipline, a keen eye for detail, and a continuous improvement
+            mindset to my professional endeavors. I'm always excited to
+            collaborate on projects that challenge and advance our understanding
+            of what's possible in the tech world.
           </p>
           <div className="flex-col md:flex-row hidden md:flex gap-5">
             <Link
