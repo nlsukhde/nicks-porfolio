@@ -89,10 +89,10 @@ export const SkillData = [
 ];
 
 export const Socials = [
-  // {
-  //   name: "Instagram",
-  //   src: "/discord.svg",
-  // },
+  {
+    name: "Instagram",
+    src: "/discord.svg",
+  },
 ];
 export const Projects = [
   {

@@ -38,7 +38,7 @@ const Navbar = () => {
         ))}
         {/* GitHub Button */}
         <a
-          href="https://github.com/nlsukhde/" // Replace with your GitHub profile link
+          href="YOUR_GITHUB_URL" // Replace with your GitHub profile link
           target="_blank"
           rel="noopener noreferrer"
           className="bg-white text-black px-4 py-2 rounded-md font-semibold"
