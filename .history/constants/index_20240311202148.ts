@@ -111,7 +111,11 @@ export const Projects = [
     title: "Modern Nextjs Portfolio",
     text: "A Next.js-powered portfolio website, featuring seamless navigation and a dynamic, responsive design.",
     src: "/WebPortfolio.png",
-    url: "https://gpt4summarizer.vercel.app"
+  },
+  {
+    title: "Matrix themed Website",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    src: "/Matrix.png",
   },
 ];
 

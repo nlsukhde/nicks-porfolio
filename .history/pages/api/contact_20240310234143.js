@@ -10,7 +10,7 @@ export default async function handler(req, res) {
       service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER, // Your Gmail address from environment variables
-        pass: process.env.EMAIL_PASSWORD // App password from environment variables
+        pass: process.env.EMAIL_PASSWORD, // App password from environment variables
       },
     });
 

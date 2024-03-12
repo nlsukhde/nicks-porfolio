@@ -2,13 +2,19 @@
 
 import React, { useState } from "react";
 
+const [toast, setToast] = useState({ show: false, message: "", type: "" });
+
+const showToast = (message, type = "success") => {
+  setToast({ show: true, message, type });
+  setTimeout(() => setToast({ show: false, message: "", type: "" }), 3000); // Hide after 3 seconds
+};
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [buttonText, setButtonText] = useState("Send a message");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -29,15 +35,18 @@ const ContactForm = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        setFormData({ name: "", email: "", message: "" }); // Clear form fields
-        setButtonText("Sent"); // Update button text to "Sent"
-        // Optionally, reset the button text back to "Send a message" after a few seconds:
-        setTimeout(() => setButtonText("Send a message"), 3000);
+        showToast("Message sent successfully!", "success");
+        // Reset form fields
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
       } else {
         throw new Error(data.message || "Failed to send message");
       }
     } catch (error) {
-      console.error("Failed to send message", error);
+      showToast((error as Error).message, "error");
     }
   };
 
@@ -74,7 +83,7 @@ const ContactForm = () => {
         type="submit"
         className="px-6 mb-10 py-3 text-sm font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 hover:bg-blue-400"
       >
-        {buttonText}
+        Send a message
       </button>
     </form>
   );

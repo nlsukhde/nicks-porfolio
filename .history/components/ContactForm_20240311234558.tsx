@@ -8,7 +8,6 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
-  const [buttonText, setButtonText] = useState("Send a message");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -17,7 +16,7 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     try {
       const response = await fetch("/api/contact", {
@@ -28,16 +27,11 @@ const ContactForm = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
-      if (response.ok) {
-        setFormData({ name: "", email: "", message: "" }); // Clear form fields
-        setButtonText("Sent"); // Update button text to "Sent"
-        // Optionally, reset the button text back to "Send a message" after a few seconds:
-        setTimeout(() => setButtonText("Send a message"), 3000);
-      } else {
-        throw new Error(data.message || "Failed to send message");
-      }
+      console.log(data);
+      // Reset form or show a success message
     } catch (error) {
       console.error("Failed to send message", error);
+      // Handle errors or show an error message
     }
   };
 
@@ -74,7 +68,7 @@ const ContactForm = () => {
         type="submit"
         className="px-6 mb-10 py-3 text-sm font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 hover:bg-blue-400"
       >
-        {buttonText}
+        Send a message
       </button>
     </form>
   );
